@@ -22,7 +22,7 @@ C# Lightweight MVVM Framework for WPF combination of best features found in PRIS
 
 - Event publisher / subscriber
 
-- Validation feature
+- Fluent Validation engine
 
 - Fluent configuration for view and view models at runtime
 
