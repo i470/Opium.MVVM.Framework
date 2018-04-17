@@ -3,7 +3,6 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Interactivity;
 using System.Windows.Media;
-using System.ComponentModel.Composition.Hosting;
 using Microsoft.Practices.ServiceLocation;
 
 namespace Opium.MVVM.Framework.View
@@ -12,7 +11,7 @@ namespace Opium.MVVM.Framework.View
     /// <summary>
     /// Behavior used to map events to visual states
     /// </summary>
-    public class VisualStateSubscriptionBehavior : Behavior<FrameworkElement>
+    public class VisualStateSubscriptionBehavior : Behavior<FrameworkElement>, IPartImportsSatisfiedNotification
     {
         /// <summary>
         /// Constructor sets up the necessary references
@@ -20,8 +19,9 @@ namespace Opium.MVVM.Framework.View
         public VisualStateSubscriptionBehavior()
         {
 
-            CompositionInitializer.SatisfyImports(this);
-            
+            //satisfy mef imports
+            ServiceLocator.Current.GetAllInstances<VisualStateAggregator>();
+
         }
 
         /// <summary>
@@ -87,6 +87,11 @@ namespace Opium.MVVM.Framework.View
             {
                 Aggregator.AddSubscription(control, EventName, StateName, UseTransitions);
             }
+        }
+
+        public void OnImportsSatisfied()
+        {
+           //todo 
         }
     }
 }

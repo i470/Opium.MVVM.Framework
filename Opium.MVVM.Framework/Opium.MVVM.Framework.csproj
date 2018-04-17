@@ -124,7 +124,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Services\CompositionInitializer.cs" />
     <Compile Include="ViewModel\BaseEntityViewModel.cs" />
     <Compile Include="ViewModel\BaseNotify.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
@@ -162,6 +161,7 @@
   <ItemGroup>
     <Folder Include="Model\" />
     <Folder Include="Regions\" />
+    <Folder Include="Services\" />
     <Folder Include="Workflow\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
