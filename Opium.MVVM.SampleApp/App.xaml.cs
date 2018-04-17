@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Opium.MVVM.Framework
+namespace Opium.MVVM.SampleApp
 {
     /// <summary>
     /// Interaction logic for App.xaml

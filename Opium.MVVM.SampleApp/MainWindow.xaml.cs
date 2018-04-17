@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Opium.MVVM.Framework
+namespace Opium.MVVM.SampleApp
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
