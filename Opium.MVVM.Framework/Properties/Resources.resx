@@ -46,20 +46,20 @@
     
     mimetype: application/x-microsoft.net.object.binary.base64
     value   : The object must be serialized with 
-            : System.Serialization.Formatters.Binary.BinaryFormatter
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
     
     mimetype: application/x-microsoft.net.object.soap.base64
     value   : The object must be serialized with 
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
-
     mimetype: application/x-microsoft.net.object.bytearray.base64
     value   : The object must be serialized into a byte array 
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
   <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
     <xsd:element name="root" msdata:IsDataSet="true">
       <xsd:complexType>
         <xsd:choice maxOccurs="unbounded">
@@ -68,9 +68,10 @@
               <xsd:sequence>
                 <xsd:element name="value" type="xsd:string" minOccurs="0" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" />
+              <xsd:attribute name="name" use="required" type="xsd:string" />
               <xsd:attribute name="type" type="xsd:string" />
               <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="assembly">
@@ -85,9 +86,10 @@
                 <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
                 <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
               </xsd:sequence>
-              <xsd:attribute name="name" type="xsd:string" msdata:Ordinal="1" />
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
               <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
               <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
             </xsd:complexType>
           </xsd:element>
           <xsd:element name="resheader">
@@ -109,9 +111,114 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="DeploymentService_DeploymentCatalogDownloadCompleted_ModuleNotFound" xml:space="preserve">
+    <value>Unable to load required module. Please contact the system administrator.</value>
+  </data>
+  <data name="DeploymentService_RequestXap_XAPExtensionError" xml:space="preserve">
+    <value>XAP name should end with .xap extension.</value>
+  </data>
+  <data name="ApplicationService_Starting_ShellResolved" xml:space="preserve">
+    <value>{0} : Shell resolved to {1}</value>
+  </data>
+  <data name="DeploymentService_DeploymentCatalogDownloadCompleted_Finished" xml:space="preserve">
+    <value>Finished loading module {0}</value>
+  </data>
+  <data name="ViewModelRouter_ActivateView">
+    <value xml:space="preserve">{0} : activate view {1}</value>
+  </data>
+  <data name="ApplicationService_Starting_Jounce_Error_No_view">
+    <value xml:space="preserve">Opium Error: No view was flagged as the shell view.</value>
+  </data>
+  <data name="RegionAdapterBase_ValidateControlName_Control_not_found" xml:space="preserve">
+    <value>Control not found: {0}</value>
+  </data>
+  <data name="RegionAdapterBase_ValidateRegionName_Region_not_found" xml:space="preserve">
+    <value>Region not found: {0}</value>
+  </data>
+  <data name="RegionManager_ActivateView_Request_to_activate_view" xml:space="preserve">
+    <value>Request to activate view {0}</value>
+  </data>
+  <data name="RegionManager_DeactivateView_Request_to_deactive_view" xml:space="preserve">
+    <value>Request to deactivate view {0}</value>
+  </data>
+  <data name="RegionManager_RegisterRegion_Region_type_is_not_supported" xml:space="preserve">
+    <value>Region type {0} is not supported.</value>
+  </data>
+  <data name="RegionManager_RegisterRegion_Added_region" xml:space="preserve">
+    <value>Added region {0}</value>
+  </data>
+  <data name="BaseNotify_ExtractPropertyName_NotAMember" xml:space="preserve">
+    <value>The expression is not a member access expression.</value>
+  </data>
+  <data name="BaseNotify_ExtractPropertyName_NotAProperty" xml:space="preserve">
+    <value>The member access expression does not access a property.</value>
+  </data>
+  <data name="BaseNotify_ExtractPropertyName_DifferentType" xml:space="preserve">
+    <value>The referenced property belongs to a different type.</value>
+  </data>
+  <data name="BaseNotify_ExtractPropertyName_NoGetter" xml:space="preserve">
+    <value>The referenced property does not have a get method.</value>
+  </data>
+  <data name="BaseNotify_ExtractPropertyName_Static" xml:space="preserve">
+    <value>The referenced property is a static property.</value>
+  </data>
+  <data name="BaseViewModel_SetErrors_NoNullErrors" xml:space="preserve">
+    <value>Errors messages should not be null.</value>
+  </data>
+  <data name="EntityEvent_ToString_EntityEvent">
+    <value xml:space="preserve">EntityEvent : {0} : {1} : {2}</value>
+  </data>
+  <data name="ViewNavigationArgs_ToString_ViewNavigation">
+    <value xml:space="preserve">ViewNavigation : {0} {1}</value>
+  </data>
+  <data name="ViewNavigationArgs_ToString_Deactivate">
+    <value xml:space="preserve">Deactivate</value>
+  </data>
+  <data name="ViewNavigationArgs_ToString_Activate">
+    <value xml:space="preserve">Activate</value>
+  </data>
+  <data name="ViewXapRoute_ToString_View_Route_View">
+    <value xml:space="preserve">View Route: View {0} in XAP {1}</value>
+  </data>
+  <data name="BaseViewModel_ToString_ViewModel">
+    <value xml:space="preserve">ViewModel: {0}</value>
+  </data>
+  <data name="ViewModelRoute_ToString_ViewModelRoute">
+    <value xml:space="preserve">ViewModelRoute: {0} binds to {1}</value>
+  </data>
+  <data name="MefDebugger_Close_MEF_Debugger_shutting_down">
+    <value xml:space="preserve">MEF Debugger shutting down.</value>
+  </data>
+  <data name="MefDebugger__msgAddExport_Added_Export">
+    <value xml:space="preserve">Added Export:</value>
+  </data>
+  <data name="MefDebugger__msgChangedExport_Removed_Export">
+    <value xml:space="preserve">Removed Export:</value>
+  </data>
+  <data name="MefDebugger__msgChangeContract_Changed_contracts">
+    <value xml:space="preserve">Changed contracts:</value>
+  </data>
+  <data name="MefDebugger__dbgMefCatalog_MEF__Found_catalog">
+    <value xml:space="preserve">MEF: Found catalog: {0}</value>
+  </data>
+  <data name="MefDebugger__dbgMefPart_MEF__Found_part">
+    <value xml:space="preserve">MEF: Found part: {0}</value>
+  </data>
+  <data name="MefDebugger__dbgMefWithKey">
+    <value><![CDATA[   With key: {0} = {1}]]></value>
+  </data>
+  <data name="MefDebugger__dbgMefWithExport_With_export">
+    <value><![CDATA[   With export:]]></value>
+  </data>
+  <data name="MefDebugger__dbgMefWithImport_With_import">
+    <value><![CDATA[   With import: {0}]]></value>
+  </data>
+  <data name="MefDebugger__dbgMefKey">
+    <value><![CDATA[      With key: {0} = {1}]]></value>
+  </data>
 </root>

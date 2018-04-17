@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Opium.MVVM.Framework.Properties
-{
-
-
+namespace Opium.MVVM.Framework.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -19,52 +19,359 @@ namespace Opium.MVVM.Framework.Properties
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Opium.MVVM.Framework.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Overrides the current thread's CurrentUICulture property for all
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Opium Error: No view was flagged as the shell view..
+        /// </summary>
+        internal static string ApplicationService_Starting_Jounce_Error_No_view {
+            get {
+                return ResourceManager.GetString("ApplicationService_Starting_Jounce_Error_No_view", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} : Shell resolved to {1}.
+        /// </summary>
+        internal static string ApplicationService_Starting_ShellResolved {
+            get {
+                return ResourceManager.GetString("ApplicationService_Starting_ShellResolved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The referenced property belongs to a different type..
+        /// </summary>
+        internal static string BaseNotify_ExtractPropertyName_DifferentType {
+            get {
+                return ResourceManager.GetString("BaseNotify_ExtractPropertyName_DifferentType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The referenced property does not have a get method..
+        /// </summary>
+        internal static string BaseNotify_ExtractPropertyName_NoGetter {
+            get {
+                return ResourceManager.GetString("BaseNotify_ExtractPropertyName_NoGetter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The expression is not a member access expression..
+        /// </summary>
+        internal static string BaseNotify_ExtractPropertyName_NotAMember {
+            get {
+                return ResourceManager.GetString("BaseNotify_ExtractPropertyName_NotAMember", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The member access expression does not access a property..
+        /// </summary>
+        internal static string BaseNotify_ExtractPropertyName_NotAProperty {
+            get {
+                return ResourceManager.GetString("BaseNotify_ExtractPropertyName_NotAProperty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The referenced property is a static property..
+        /// </summary>
+        internal static string BaseNotify_ExtractPropertyName_Static {
+            get {
+                return ResourceManager.GetString("BaseNotify_ExtractPropertyName_Static", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Errors messages should not be null..
+        /// </summary>
+        internal static string BaseViewModel_SetErrors_NoNullErrors {
+            get {
+                return ResourceManager.GetString("BaseViewModel_SetErrors_NoNullErrors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ViewModel: {0}.
+        /// </summary>
+        internal static string BaseViewModel_ToString_ViewModel {
+            get {
+                return ResourceManager.GetString("BaseViewModel_ToString_ViewModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Finished loading module {0}.
+        /// </summary>
+        internal static string DeploymentService_DeploymentCatalogDownloadCompleted_Finished {
+            get {
+                return ResourceManager.GetString("DeploymentService_DeploymentCatalogDownloadCompleted_Finished", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unable to load required module. Please contact the system administrator..
+        /// </summary>
+        internal static string DeploymentService_DeploymentCatalogDownloadCompleted_ModuleNotFound {
+            get {
+                return ResourceManager.GetString("DeploymentService_DeploymentCatalogDownloadCompleted_ModuleNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to XAP name should end with .xap extension..
+        /// </summary>
+        internal static string DeploymentService_RequestXap_XAPExtensionError {
+            get {
+                return ResourceManager.GetString("DeploymentService_RequestXap_XAPExtensionError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to EntityEvent : {0} : {1} : {2}.
+        /// </summary>
+        internal static string EntityEvent_ToString_EntityEvent {
+            get {
+                return ResourceManager.GetString("EntityEvent_ToString_EntityEvent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MEF: Found catalog: {0}.
+        /// </summary>
+        internal static string MefDebugger__dbgMefCatalog_MEF__Found_catalog {
+            get {
+                return ResourceManager.GetString("MefDebugger__dbgMefCatalog_MEF__Found_catalog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to       With key: {0} = {1}.
+        /// </summary>
+        internal static string MefDebugger__dbgMefKey {
+            get {
+                return ResourceManager.GetString("MefDebugger__dbgMefKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MEF: Found part: {0}.
+        /// </summary>
+        internal static string MefDebugger__dbgMefPart_MEF__Found_part {
+            get {
+                return ResourceManager.GetString("MefDebugger__dbgMefPart_MEF__Found_part", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to    With export:.
+        /// </summary>
+        internal static string MefDebugger__dbgMefWithExport_With_export {
+            get {
+                return ResourceManager.GetString("MefDebugger__dbgMefWithExport_With_export", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to    With import: {0}.
+        /// </summary>
+        internal static string MefDebugger__dbgMefWithImport_With_import {
+            get {
+                return ResourceManager.GetString("MefDebugger__dbgMefWithImport_With_import", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to    With key: {0} = {1}.
+        /// </summary>
+        internal static string MefDebugger__dbgMefWithKey {
+            get {
+                return ResourceManager.GetString("MefDebugger__dbgMefWithKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Added Export:.
+        /// </summary>
+        internal static string MefDebugger__msgAddExport_Added_Export {
+            get {
+                return ResourceManager.GetString("MefDebugger__msgAddExport_Added_Export", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Changed contracts:.
+        /// </summary>
+        internal static string MefDebugger__msgChangeContract_Changed_contracts {
+            get {
+                return ResourceManager.GetString("MefDebugger__msgChangeContract_Changed_contracts", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Removed Export:.
+        /// </summary>
+        internal static string MefDebugger__msgChangedExport_Removed_Export {
+            get {
+                return ResourceManager.GetString("MefDebugger__msgChangedExport_Removed_Export", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to MEF Debugger shutting down..
+        /// </summary>
+        internal static string MefDebugger_Close_MEF_Debugger_shutting_down {
+            get {
+                return ResourceManager.GetString("MefDebugger_Close_MEF_Debugger_shutting_down", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Control not found: {0}.
+        /// </summary>
+        internal static string RegionAdapterBase_ValidateControlName_Control_not_found {
+            get {
+                return ResourceManager.GetString("RegionAdapterBase_ValidateControlName_Control_not_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Region not found: {0}.
+        /// </summary>
+        internal static string RegionAdapterBase_ValidateRegionName_Region_not_found {
+            get {
+                return ResourceManager.GetString("RegionAdapterBase_ValidateRegionName_Region_not_found", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request to activate view {0}.
+        /// </summary>
+        internal static string RegionManager_ActivateView_Request_to_activate_view {
+            get {
+                return ResourceManager.GetString("RegionManager_ActivateView_Request_to_activate_view", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Request to deactivate view {0}.
+        /// </summary>
+        internal static string RegionManager_DeactivateView_Request_to_deactive_view {
+            get {
+                return ResourceManager.GetString("RegionManager_DeactivateView_Request_to_deactive_view", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Added region {0}.
+        /// </summary>
+        internal static string RegionManager_RegisterRegion_Added_region {
+            get {
+                return ResourceManager.GetString("RegionManager_RegisterRegion_Added_region", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Region type {0} is not supported..
+        /// </summary>
+        internal static string RegionManager_RegisterRegion_Region_type_is_not_supported {
+            get {
+                return ResourceManager.GetString("RegionManager_RegisterRegion_Region_type_is_not_supported", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ViewModelRoute: {0} binds to {1}.
+        /// </summary>
+        internal static string ViewModelRoute_ToString_ViewModelRoute {
+            get {
+                return ResourceManager.GetString("ViewModelRoute_ToString_ViewModelRoute", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} : activate view {1}.
+        /// </summary>
+        internal static string ViewModelRouter_ActivateView {
+            get {
+                return ResourceManager.GetString("ViewModelRouter_ActivateView", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Activate.
+        /// </summary>
+        internal static string ViewNavigationArgs_ToString_Activate {
+            get {
+                return ResourceManager.GetString("ViewNavigationArgs_ToString_Activate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Deactivate.
+        /// </summary>
+        internal static string ViewNavigationArgs_ToString_Deactivate {
+            get {
+                return ResourceManager.GetString("ViewNavigationArgs_ToString_Deactivate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to ViewNavigation : {0} {1}.
+        /// </summary>
+        internal static string ViewNavigationArgs_ToString_ViewNavigation {
+            get {
+                return ResourceManager.GetString("ViewNavigationArgs_ToString_ViewNavigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View Route: View {0} in XAP {1}.
+        /// </summary>
+        internal static string ViewXapRoute_ToString_View_Route_View {
+            get {
+                return ResourceManager.GetString("ViewXapRoute_ToString_View_Route_View", resourceCulture);
             }
         }
     }
