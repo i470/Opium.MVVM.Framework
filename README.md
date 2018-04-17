@@ -32,7 +32,7 @@ C# Lightweight MVVM Framework for WPF combination of best features found in PRIS
 
 - Automatic Busy Indicators
 
-- Abstracter Dispatcher on UI 
+- Abstracted Dispatcher on UI 
 
 # Samples included in a project
 Build with Visual Studio 2017 .NET 4.7 
