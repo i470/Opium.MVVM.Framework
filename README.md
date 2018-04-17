@@ -1,6 +1,6 @@
 # Opium.MVVM.Framework
 
-C# Lightweight MVVM Framework combination of best features found in PRISM, Caliburn and Jounce and years of experience
+C# Lightweight MVVM Framework for WPF combination of best features found in PRISM, Caliburn and Jounce 
 
 - Dependence Injection provided by MEF
 
