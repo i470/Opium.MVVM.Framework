@@ -70,6 +70,10 @@
   <ItemGroup>
     <Compile Include="Command\ActionCommand.cs" />
     <Compile Include="Command\IActionCommand.cs" />
+    <Compile Include="Event\EntityCommand.cs" />
+    <Compile Include="Event\EntityEvent.cs" />
+    <Compile Include="Event\IEventAggregator.cs" />
+    <Compile Include="Event\IEventSink.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -94,7 +98,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Event\" />
     <Folder Include="Fluent\" />
     <Folder Include="Model\" />
     <Folder Include="Regions\" />
