@@ -28,5 +28,7 @@ C# Lightweight MVVM Framework for WPF combination of best features found in PRIS
 
 - Run time configuration for regions
 
+- Interecptors ( by Castle Windsor )
+
 # Samples included in a project
 Build with Visual Studio 2017 .NET 4.7 
