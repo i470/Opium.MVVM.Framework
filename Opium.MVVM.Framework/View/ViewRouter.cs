@@ -7,7 +7,9 @@ using System.Threading.Tasks;
 using System.Web.UI;
 using Castle.Core.Logging;
 using Opium.MVVM.Framework.Event;
+using Opium.MVVM.Framework.Fluent;
 using Opium.MVVM.Framework.ViewModel;
+using UserControl = System.Windows.Controls.UserControl;
 
 namespace Opium.MVVM.Framework.View
 {
@@ -97,7 +99,7 @@ namespace Opium.MVVM.Framework.View
                  where location.ViewName.Equals(e.ViewType, StringComparison.InvariantCultureIgnoreCase)
                  select location).FirstOrDefault();
 
-            // if so, try to load the xap, then activate the view
+            // if so, try to load the dll, then activate the view
             if (viewLocation != null)
             {
                 DeploymentService.RequestXap(viewLocation.View,
@@ -132,20 +134,15 @@ namespace Opium.MVVM.Framework.View
         /// Use to fluently route a view to a dll file
         /// </summary>
         /// <param name="view">The tag for the view</param>
-        /// <param name="xap">The name of the DLL module</param>
-        public void RouteViewInXap(string view, string dll)
+        /// <param name="dll">The name of the DLL module</param>
+        public void RouteViewInDll(string view, string dll)
         {
             _fluentRoutes.Add(ViewRoute.Create(view, dll));
         }
 
-        /// <summary>
-        /// Use to fluently route a view type to a xap file
-        /// </summary>
-        /// <typeparam name="T">The type of the view (uses the full name for the tag)</typeparam>
-        /// <param name="xap">The name of the dll module file</param>
-        public void RouteViewInXap<T>(string dll) where T : UserControl
+        public void RouteViewInDll<T>(string dll) where T : UserControl
         {
-            _fluentRoutes.Add(ViewRoute.Create<T>(dll));
+           //todo
         }
     }
 }

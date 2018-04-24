@@ -1,4 +1,5 @@
 ﻿using System;
+using Opium.MVVM.Framework.Properties;
 
 namespace Opium.MVVM.Framework.Event
 {

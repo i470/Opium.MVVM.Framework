@@ -37,18 +37,7 @@ namespace Opium.MVVM.Framework.ViewModel
         /// <param name="value">The source data being passed to the target.</param><param name="targetType">The <see cref="T:System.Type"/> of data expected by the target dependency property.</param><param name="parameter">An optional parameter to be used in the converter logic.</param><param name="culture">The culture of the conversion.</param>
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
-            if ()
-            {
-                return value;
-            }
-
-            lock (_composedConverter)
-            {
-                if (_composedConverter.Router == null)
-                {
-                    CompositionInitializer.SatisfyImports(_composedConverter);
-                }
-            }
+           
 
             if (_composedConverter.Router == null)
             {

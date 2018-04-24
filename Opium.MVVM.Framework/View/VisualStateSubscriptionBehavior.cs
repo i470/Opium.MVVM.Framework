@@ -18,9 +18,8 @@ namespace Opium.MVVM.Framework.View
         /// </summary>
         public VisualStateSubscriptionBehavior()
         {
-
             //satisfy mef imports
-            ServiceLocator.Current.GetAllInstances<VisualStateAggregator>();
+            ServiceLocator.Current.GetInstance<VisualStateAggregator>();
 
         }
 

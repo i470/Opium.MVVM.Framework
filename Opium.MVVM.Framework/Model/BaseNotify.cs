@@ -1,25 +1,25 @@
+﻿
 ﻿using System;
 using System.ComponentModel;
 using System.Linq.Expressions;
 using System.Reflection;
-using Opium.MVVM.Framework.Properties;
+ using Opium.MVVM.Framework.Properties;
 
-namespace Opium.MVVM.Framework.ViewModel
+namespace Opium.MVVM.Framework.Model
 {
     
     public abstract class BaseNotify : INotifyPropertyChanged
     {
+       
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void RaisePropertyChanged(string propertyName)
         {
             var handler = PropertyChanged;
-            if (handler != null)
-            {
-                handler(this, new PropertyChangedEventArgs(propertyName));
-            }
+            handler?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
+       
         protected void RaisePropertyChanged(params string[] propertyNames)
         {
             foreach (var name in propertyNames)
@@ -28,22 +28,22 @@ namespace Opium.MVVM.Framework.ViewModel
             }
         }
 
-         
+       
         protected void RaisePropertyChanged<T>(Expression<Func<T>> propertyExpression)
         {
             var propertyName = ExtractPropertyName(propertyExpression);
             RaisePropertyChanged(propertyName);
         }
 
+     
         protected string ExtractPropertyName<T>(Expression<Func<T>> propertyExpression)
         {
             if (propertyExpression == null)
             {
-                throw new ArgumentNullException("propertyExpression");
+                throw new ArgumentNullException($"propertyExpression");
             }
 
-            var memberExpression = propertyExpression.Body as MemberExpression;
-            if (memberExpression == null)
+            if (!(propertyExpression.Body is MemberExpression memberExpression))
             {
                 throw new ArgumentException(Resources.BaseNotify_ExtractPropertyName_NotAMember, "propertyExpression");
             }

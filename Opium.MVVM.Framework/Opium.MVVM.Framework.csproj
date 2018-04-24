@@ -110,7 +110,9 @@
     <Compile Include="Event\IEventSink.cs" />
     <Compile Include="Fluent\IFluentRegionManager.cs" />
     <Compile Include="Fluent\IFluentViewModelRouter.cs" />
+    <Compile Include="Fluent\IFluentViewRouter.cs" />
     <Compile Include="MefDebugger.cs" />
+    <Compile Include="Model\BaseNotify.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -124,6 +126,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Services\DefaultLogger.cs" />
+    <Compile Include="Services\EventAggregatorService.cs" />
+    <Compile Include="Services\ILogger.cs" />
+    <Compile Include="Services\LogSeverity.cs" />
+    <Compile Include="Services\NavigationTrigger.cs" />
     <Compile Include="ViewModel\BaseEntityViewModel.cs" />
     <Compile Include="ViewModel\BaseNotify.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
@@ -159,9 +166,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Model\" />
     <Folder Include="Regions\" />
-    <Folder Include="Services\" />
     <Folder Include="Workflow\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

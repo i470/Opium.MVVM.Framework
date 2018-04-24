@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
@@ -7,6 +8,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Opium.MVVM.Framework.Command;
+using Opium.MVVM.Framework.Properties;
 
 namespace Opium.MVVM.Framework.ViewModel
 {
@@ -131,48 +133,26 @@ namespace Opium.MVVM.Framework.ViewModel
         /// <summary>
         ///     True if errors exist
         /// </summary>
-        protected bool HasErrors
-        {
-            get { return _errors.Any(); }
-        }
+        protected bool HasErrors => _errors.Any();
 
-        /// <summary>
-        ///     Get errors for a property
-        /// </summary>
-        /// <param name="propertyName">The property</param>
-        /// <returns>The list of errors</returns>
         IEnumerable INotifyDataErrorInfo.GetErrors(string propertyName)
         {
             return GetErrors(propertyName);
         }
 
-        /// <summary>
-        ///     Get errors for a property
-        /// </summary>
-        /// <param name="propertyName">The name of the property</param>
-        /// <returns></returns>
+        
         protected virtual IEnumerable GetErrors(string propertyName)
         {
             IEnumerable<string> error;
             return _errors.TryGetValue(propertyName ?? string.Empty, out error) ? error : null;
         }
 
-        /// <summary>
-        ///     Set an error for a property
-        /// </summary>
-        /// <param name="propertyName">The name of the property</param>
-        /// <param name="error">The error</param>
+        
         protected virtual void SetError(string propertyName, string error)
         {
             SetErrors(propertyName, new List<string> { error });
         }
-
-        /// <summary>
-        ///     Overload for expression
-        /// </summary>
-        /// <typeparam name="T">The type of the property</typeparam>
-        /// <param name="propertyExpresssion">An expression that points to the property</param>
-        /// <param name="error">The error</param>
+        
         protected virtual void SetError<T>(Expression<Func<T>> propertyExpresssion, string error)
         {
             var propertyName = ExtractPropertyName(propertyExpresssion);
@@ -188,39 +168,25 @@ namespace Opium.MVVM.Framework.ViewModel
             SetErrors(propertyName, new List<string>());
         }
 
-        /// <summary>
-        ///     Clear all errors for a property
-        /// </summary>
-        /// <typeparam name="T">The type of the property</typeparam>
-        /// <param name="propertyExpresssion">The expression that points to the property</param>
+       
         protected virtual void ClearErrors<T>(Expression<Func<T>> propertyExpresssion)
         {
             var propertyName = ExtractPropertyName(propertyExpresssion);
             ClearErrors(propertyName);
         }
 
-        /// <summary>
-        ///     Set errors for a property
-        /// </summary>
-        /// <typeparam name="T">The type of the property</typeparam>
-        /// <param name="propertyExpresssion">The expression for the property</param>
-        /// <param name="propertyErrors">The collection of errors</param>
+        
         protected virtual void SetErrors<T>(Expression<Func<T>> propertyExpresssion, IEnumerable<string> propertyErrors)
         {
             var propertyName = ExtractPropertyName(propertyExpresssion);
             SetErrors(propertyName, propertyErrors);
         }
-
-        /// <summary>
-        ///     Set errors for a property
-        /// </summary>
-        /// <param name="propertyName">The name of the property</param>
-        /// <param name="propertyErrors">The collection of errors</param>
+        
         protected virtual void SetErrors(string propertyName, IEnumerable<string> propertyErrors)
         {
             if (propertyErrors.Any(error => error == null))
             {
-                throw new ArgumentException(Core.Resources.BaseViewModel_SetErrors_NoNullErrors, "propertyErrors");
+                throw new ArgumentException(Resources.BaseViewModel_SetErrors_NoNullErrors, "propertyErrors");
             }
 
             var propertyNameKey = propertyName ?? string.Empty;
@@ -252,10 +218,7 @@ namespace Opium.MVVM.Framework.ViewModel
             }
         }
 
-        /// <summary>
-        ///     Raises this object's ErrorsChangedChanged event.
-        /// </summary>
-        /// <param name="propertyName">The property that has new errors.</param>
+        
         protected virtual void RaiseErrorsChanged(string propertyName)
         {
             var handler = ErrorsChanged;
