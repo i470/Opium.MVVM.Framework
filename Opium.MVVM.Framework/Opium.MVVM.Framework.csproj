@@ -126,6 +126,11 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Regions\ContentRegion.cs" />
+    <Compile Include="Regions\IRegionAdapterBase.cs" />
+    <Compile Include="Regions\IRegionAdapterMetadata.cs" />
+    <Compile Include="Regions\RegionAdapter.cs" />
+    <Compile Include="Regions\RegionAdapterForAttribute.cs" />
     <Compile Include="Services\DefaultLogger.cs" />
     <Compile Include="Services\EventAggregatorService.cs" />
     <Compile Include="Services\ILogger.cs" />
@@ -166,7 +171,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Regions\" />
     <Folder Include="Workflow\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
