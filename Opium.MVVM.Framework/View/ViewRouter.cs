@@ -2,12 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web.UI;
-using Castle.Core.Logging;
 using Opium.MVVM.Framework.Event;
 using Opium.MVVM.Framework.Fluent;
+using Opium.MVVM.Framework.Services;
 using Opium.MVVM.Framework.ViewModel;
 using UserControl = System.Windows.Controls.UserControl;
 
@@ -28,10 +25,10 @@ namespace Opium.MVVM.Framework.View
         private bool _initialized;
 
         /// <summary>
-        /// The deployment service reference to <see cref="IDeploymentService"/>
+        /// The deployment service reference to <see cref="IBootStrapperService"/>
         /// </summary>
         [Import]
-        public IDeploymentService DeploymentService { get; set; }
+        public IBootStrapperService DeploymentService { get; set; }
 
         /// <summary>
         /// The instance of the <see cref="IViewModelRouter"/>
@@ -57,7 +54,7 @@ namespace Opium.MVVM.Framework.View
         public IEventAggregator EventAggregator { get; set; }
 
         /// <summary>
-        /// Instance of the <see cref="ILogger"/>
+        /// Instance of the <see cref="Castle.Core.Logging.ILogger"/>
         /// </summary>
         [Import(AllowDefault = true, AllowRecomposition = true)]
         public ILogger Logger { get; set; }
@@ -102,7 +99,7 @@ namespace Opium.MVVM.Framework.View
             // if so, try to load the dll, then activate the view
             if (viewLocation != null)
             {
-                DeploymentService.RequestXap(viewLocation.View,
+                DeploymentService.RequestModule(viewLocation.View,
                                              exception =>
                                              {
                                                  if (exception != null)

@@ -2,12 +2,7 @@
 
 namespace Opium.MVVM.Framework.Fluent
 {
-    // <summary>
-    ///     Configure a view route at runtime
-    /// 
-    /// <remarks>
-    /// Use this to dynamically inform Jounce that a view with a tag lives in a separate Xap file
-    /// </remarks>
+  
     public interface IFluentViewRouter
     {
         /// <summary>

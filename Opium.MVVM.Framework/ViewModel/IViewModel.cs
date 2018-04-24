@@ -55,25 +55,9 @@ namespace Opium.MVVM.Framework.ViewModel
         /// </summary>
         void Deactivate(string viewName);
 
-        /// <summary>
-        ///     Returns true when in design mode
-        /// </summary>
+        
         bool InDesigner { get; }
 
-        /// <summary>
-        ///     True when running in out of browser mode
-        /// </summary>
-        bool IsRunningOutOfBrowser { get; }
-
-        /// <summary>
-        ///     True when installed as an OOB application
-        /// </summary>
-        bool IsInstalled { get; }
-
-        /// <summary>
-        ///     Sets the title, whether in the browser or in Out of Browser
-        /// </summary>
-        /// <param name="title">The title to set</param>
         void SetTitle(string title);
     }
 }

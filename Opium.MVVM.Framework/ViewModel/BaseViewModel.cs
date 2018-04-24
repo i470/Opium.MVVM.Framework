@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Composition;
+using System.ComponentModel.Composition;
 using System.Reflection;
-using Castle.Core.Logging;
 using Opium.MVVM.Framework.Event;
 using Opium.MVVM.Framework.Properties;
+using Opium.MVVM.Framework.Services;
+
 
 namespace Opium.MVVM.Framework.ViewModel
 {
@@ -85,7 +86,7 @@ namespace Opium.MVVM.Framework.ViewModel
         public IViewModelRouter Router { get; set; }
 
         /// <summary>
-        /// The instance of the <see cref="ILogger"/>
+        /// The instance of the <see cref="Castle.Core.Logging.ILogger"/>
         /// </summary>
         [Import(AllowDefault = true, AllowRecomposition = true)]
         public ILogger Logger { get; set; }

@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel.Composition.Hosting;
 using System.ComponentModel.Composition.Primitives;
-using Castle.Core.Logging;
 using Opium.MVVM.Framework.Properties;
+using Opium.MVVM.Framework.Services;
+
 
 namespace Opium.MVVM.Framework
 {

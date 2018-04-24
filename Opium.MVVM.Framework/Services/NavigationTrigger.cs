@@ -2,6 +2,7 @@
 using System.Composition;
 using System.Windows;
 using System.Windows.Interactivity;
+using Microsoft.Practices.ServiceLocation;
 using Opium.MVVM.Framework.Event;
 
 namespace Opium.MVVM.Framework.Services
@@ -34,8 +35,7 @@ namespace Opium.MVVM.Framework.Services
         {
             if (_eventAggregator == null)
             {
-                CompositionInitializer.SatisfyImports(this);
-                _eventAggregator = EventAggregator;
+                _eventAggregator = ServiceLocator.Current.GetInstance<IEventAggregator>();
             }
             _eventAggregator.Publish(Target.AsViewNavigationArgs());
         }

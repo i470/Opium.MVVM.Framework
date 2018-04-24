@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Markup;
+using Microsoft.Practices.ServiceLocation;
 
 namespace Opium.MVVM.Framework.ViewModel
 {
@@ -55,15 +56,10 @@ namespace Opium.MVVM.Framework.ViewModel
         /// <returns>The instance of the view model if it can be resolved</returns>
         public override object ProvideValue(IServiceProvider serviceProvider)
         {
-            // Ignore when in designer
-            if (DesignerProperties.IsInDesignTool)
-            {
-                return null;
-            }
-
+            
             if (Router == null)
             {
-                CompositionInitializer.SatisfyImports(this);
+                ServiceLocator.Current.GetAllInstances(typeof(IViewModelRouter));
             }
 
             if (Router == null) return null; // not in runtime, return nothing
@@ -90,7 +86,7 @@ namespace Opium.MVVM.Framework.ViewModel
                 {
                     baseViewModel.RegisterVisualState(viewName,
                                                       (state, transitions) =>
-                                                      JounceHelper.ExecuteOnUI(
+                                                      OpiumHelper.ExecuteOnUI(
                                                           () => VisualStateManager.GoToState(view, state,
                                                                                              transitions)));
                     BindViewModel(view, baseViewModel);
